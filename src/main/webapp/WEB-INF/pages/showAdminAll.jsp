@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>shunxin.online</title>
 </head>
 <script src="${pageContext.request.contextPath}/js/jquery-3.2.1.min.js"></script>
 <body>
