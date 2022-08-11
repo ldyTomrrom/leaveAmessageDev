@@ -1,0 +1,37 @@
+常用API
+   1._getCmnContext()(获取基本数据) 
+			-- getTxDate(交易日期)
+			-- getGuid()(GUID)		
+   2.arr = _getArrMngr().getArr(in.getArrId());  通过合约id获取合约
+   
+     arr = _getArrMngr().getArr(in.getAcctNbr(), null);提供合同号获取合约
+   3._getArrTxMngr().getTxSeqNbr(arr.getArrId()); 交易序列号
+   4.arr.saveArrExtendAttribute() 保存或修改合约扩展属性
+   
+   5. _getArrTxMngr().getTxSeqNbr(arr.getArrId());获取当前合约的交易序列号
+   6.arr.modifyCndValue(_getCmnContext().getBusinessDate(), cndList, _getCmnContext().getTxDate(),  txSeqNbr);修改合约条件列表
+   
+   7.arr.getArrCnd(PdCndEnum.CONTRACT_AMOUNT.getValue())).getRngVal(); 获取枚举指定条件值;
+   8._getArrTxMngr().createArrTx(arrTxStdFrmtIn, arr);创建合约交易历史
+   
+   9.asset.modifyAssetXtn() 修改资产详情信息 d
+   
+   
+   
+枚举类型:
+	1.CCM01(常用符号)
+		 -- CCM01.NO
+		 -- CCM01.YES
+	2.SyAmtTpAddEnum(金额类型)
+	
+	3.ArrXtnInfoEnum(合约扩展字段名称)
+			AFC_SUBSIDY_AMT(afc贴息)
+
+		 
+异常信息
+	 throw new BizApplicationException("AAPPDE0058", new Object[]{"message"});
+
+
+
+使用类:	 SyAFSimulationSubsidyAmount(贴息试算)
+	 
