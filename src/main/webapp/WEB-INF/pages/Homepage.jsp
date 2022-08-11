@@ -10,6 +10,5 @@
         <frame name="right"/>
     </frameset>
 
-
 </frameset>>
 </html>
