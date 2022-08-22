@@ -26,7 +26,7 @@ public class FileUploadingController {
         StringBuilder sb = new StringBuilder("结果 =");
 
         String name = file.getOriginalFilename();
-        String url="D:\\tools\\projectStudy\\leaveAmessage\\src\\main\\webapp\\file";
+        String url="D:\\lea\\file";
         File f=new File(url);
         if (!f.exists()){
 
