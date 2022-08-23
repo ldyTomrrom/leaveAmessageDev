@@ -39,7 +39,7 @@ public class LeavenWordServiceImpl implements LeavenWordService {
            o=new Owner();
            o.setId(UUIDUtils.getUUID());
            o.setName(oname);
-           int ru= ownerMapper.insertAll(o);
+           ownerMapper.insertAll(o);
        }
        //存在此姓名, 新建备注
         LeaveWord lw=new LeaveWord();
