@@ -12,10 +12,10 @@
 
 
     好友名字:<input id="ownerName"><br/><br/>
-    <textarea id="lword" rows="10" cols="100">留言内容</textarea>
+    <textarea id="lword" rows="10" cols="100"></textarea>
 
     <br/>
-    输入你的角色:<input type="text" id="name">
+     你的角色:<input type="text" id="name">
     <button id="rest">清空留言</button>
     <button id="submit">提交留言</button>
     <br>
@@ -28,7 +28,7 @@
 
         $("#rest").on("click", function () {
             if (confirm("你确定清空吗")) {
-                $("#lword").val("请输入你想说的话");
+                $("#lword").val("");
                 $("#ownerName").val("");
                 $("#name").val("");
             }
@@ -39,15 +39,15 @@
             let ownerName = $("#ownerName").val();
             let name = $("#name").val();
             if (ownerName == "" || ownerName == null) {
-                alert("必须输入留言给谁");
+                alert("你要给谁留言🧐?");
                 return;
             }
-            if (context == "请输入你想说的话" || context == "" || context == null) {
-                alert("请输入你的留言后再提交");
+            if (context == "" || context == null) {
+                alert("请输入你的留言‍🦲");
                 return;
             }
             if (name==""||name==null){
-                alert("请输入您的称呼")
+                alert("谁是留言者🧐")
                 return;
             }
             //发送请求

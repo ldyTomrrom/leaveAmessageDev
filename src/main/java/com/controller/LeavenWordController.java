@@ -35,7 +35,7 @@ public class LeavenWordController {
         //添加备注
        int success=  leavenWordService.addLeavenWord(context,oname,name);
        if (success==0){
-           return ReturnObject.fail("重复提交");
+           return ReturnObject.fail("这条留言太火爆了,换一条试试吧🥰");
        }else if (success!=1){
             return ReturnObject.fail("提交失败,联系管理员处理");
         }

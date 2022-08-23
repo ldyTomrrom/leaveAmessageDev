@@ -119,7 +119,7 @@
     </select>
     <select id="selectLeaveWordIsFeasible" resultType="java.lang.Integer">
         select  count(id)
-        from tbl_tbl_leaveword
+        from tbl_leaveword
         where context=#{context} and name=#{name} and owner=#{oid}
 
     </select>
