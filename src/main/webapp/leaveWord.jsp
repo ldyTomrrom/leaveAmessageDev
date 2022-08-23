@@ -63,7 +63,9 @@
                 success:function (data) {
                     if (data.code==1){
                         alert("提交成功")
-                        window.location.href = "selectLeaveWord.jsp";
+                        if (confirm("是否前往查看留言")){
+                            window.location.href = "selectLeaveWord.jsp";
+                        }
                     }else{
                         alert(data.message);
                     }
