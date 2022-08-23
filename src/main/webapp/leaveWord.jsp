@@ -15,7 +15,7 @@
     <textarea id="lword" rows="10" cols="100">留言内容</textarea>
 
     <br/>
-    输入你的身份:<input type="text" id="name">
+    输入你的角色:<input type="text" id="name">
     <button id="rest">清空留言</button>
     <button id="submit">提交留言</button>
     <br>
@@ -29,6 +29,8 @@
         $("#rest").on("click", function () {
             if (confirm("你确定清空吗")) {
                 $("#lword").val("请输入你想说的话");
+                $("#ownerName").val("");
+                $("#name").val("");
             }
         });
         $("#submit").on("click", function () {
@@ -52,6 +54,7 @@
             $.ajax({
                 url:"${pageContext.request.contextPath}/addLeavenWord",
                 type:"post",
+                async:false,
                 data:{
                     context:context,
                     ownerName:ownerName,

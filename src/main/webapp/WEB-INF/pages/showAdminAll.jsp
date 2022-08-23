@@ -39,7 +39,6 @@
 
             </tr>
             <c:forEach var="word" items="${wordList}" varStatus="w">
-
                 <tr>
                     <td>${word.owner}</td>
                     <td>

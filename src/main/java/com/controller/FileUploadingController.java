@@ -39,7 +39,8 @@ public class FileUploadingController {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return sb.toString();
+
+        return "success";
     }
 
 }
