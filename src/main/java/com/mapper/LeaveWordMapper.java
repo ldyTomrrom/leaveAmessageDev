@@ -21,4 +21,6 @@ public interface LeaveWordMapper {
     List<LeaveWord> selectBySnameLike(@Param("name") String name);
 
     List<LeaveWord> selectByNameLikeAll(@Param("name") String name);
+
+    int selectLeaveWordIsFeasible(@Param("oid") String oId,@Param("name") String name, @Param("context") String context);
 }

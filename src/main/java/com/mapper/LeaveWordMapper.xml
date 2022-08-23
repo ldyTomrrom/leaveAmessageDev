@@ -114,8 +114,13 @@
         </where>
 
         order  by l.messagetime desc
-        limit 0,5
+        limit 0,20
 
+    </select>
+    <select id="selectLeaveWordIsFeasible" resultType="java.lang.Integer">
+        select  count(id)
+        from tbl_tbl_leaveword
+        where context=#{context} and name=#{name} and owner=#{oid}
 
     </select>
 </mapper>

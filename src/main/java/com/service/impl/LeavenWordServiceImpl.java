@@ -31,6 +31,7 @@ public class LeavenWordServiceImpl implements LeavenWordService {
     @Transactional(rollbackFor =Exception.class)
     @Override
     public int addLeavenWord(String context, String oname, String name) {
+
         //先查询出oname是否存在,存在则返回id并插入备注 不存在先新增oname后插入备注
         Owner o= ownerMapper.selectByNameIsExist(oname);
 
@@ -41,6 +42,11 @@ public class LeavenWordServiceImpl implements LeavenWordService {
            o.setName(oname);
            ownerMapper.insertAll(o);
        }
+        //验证是否是无效留言,如果重复内容为3条以上则取消插入
+        int r=leaveWordMapper.selectLeaveWordIsFeasible(o.getId(),name,context);
+        if (r>3){
+            return 0;
+        }
        //存在此姓名, 新建备注
         LeaveWord lw=new LeaveWord();
        lw.setContext(context);
