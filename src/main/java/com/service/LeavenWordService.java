@@ -1,6 +1,7 @@
 package com.service;
 
 import com.pojo.LeaveWord;
+import com.vo.LeavenWordCndVO;
 
 import java.util.List;
 
@@ -16,4 +17,7 @@ public interface LeavenWordService {
     List<LeaveWord> selectByNameLikeAll(String name);
 
     int deleteById(String id);
+
+    List<LeaveWord> selectLeavenWordCnd(LeavenWordCndVO lwc);
+
 }

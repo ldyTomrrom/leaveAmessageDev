@@ -4,6 +4,7 @@ import com.mapper.OwnerMapper;
 import com.pojo.LeaveWord;
 import com.service.LeavenWordService;
 import com.util.ReturnObject;
+import com.vo.LeavenWordCndVO;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -78,12 +79,21 @@ public class LeavenWordController {
 
         int result=leavenWordService.deleteById(id);
         if (result==1){
-
         }
-
-
         return  "showAdminAll.jsp";
 
+    }
+    @RequestMapping("/selectLeavenWordCnd")
+    @ResponseBody
+    public ReturnObject selectLeavenWordCnd(HttpServletRequest request ,LeavenWordCndVO lwc){
+        ReturnObject fail = ReturnObject.fail("暂未找到此留言😶‍🌫️\n"+lwc.toString());
+//        多条件查询
+        List<LeaveWord>  wordList= leavenWordService.selectLeavenWordCnd(lwc);
+        if (!wordList.isEmpty()){
+          return ReturnObject.success(wordList);
+        }
+
+        return fail;
     }
 
 }

@@ -7,6 +7,7 @@ import com.pojo.Owner;
 import com.service.LeavenWordService;
 import com.util.DateUtils;
 import com.util.UUIDUtils;
+import com.vo.LeavenWordCndVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -84,5 +85,12 @@ public class LeavenWordServiceImpl implements LeavenWordService {
     @Override
     public int deleteById(String id) {
         return leaveWordMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public List<LeaveWord> selectLeavenWordCnd(LeavenWordCndVO lwc) {
+        //多条件查询留言
+        List<LeaveWord> leaveWordList= leaveWordMapper.selectLeavenWordCnd(lwc);
+        return leaveWordList;
     }
 }

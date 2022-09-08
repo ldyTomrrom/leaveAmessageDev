@@ -123,4 +123,22 @@
         where context=#{context} and name=#{name} and owner=#{oid}
 
     </select>
+    <select id="selectLeavenWordCnd" resultType="com.pojo.LeaveWord">
+        select l.id as id, l.context as context, o.name as owner, l.messagetime as messagetime, l.name
+        from tbl_leaveword as l
+        JOIN tbl_owner as o
+        on l.owner = o.id
+        <where>
+            <if test="name != null">
+            and l.name like '%' #{name} '%'
+            </if>
+             <if test="context != null">
+            and l.context like '%' #{context} '%'
+            </if>
+             <if test="startDt != null and startDt!='' and endDt != null and endDt != '' ">
+                and l.messagetime BETWEEN  #{startDt}  and   #{endDt}
+             </if>
+        </where>
+
+    </select>
 </mapper>

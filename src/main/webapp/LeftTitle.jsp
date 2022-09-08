@@ -31,6 +31,7 @@
         <ul>
             <li><a href="leaveWord.jsp"  target="right">创建留言</a></li>
             <li><a href="selectLeaveWord.jsp"  target="right">查看留言</a></li>
+            <li><a href="selectCnd.jsp"  target="right">多条件查询留言</a></li>
             <li><a href="loginUser.jsp" target="right">管理员登录</a></li>
             <li><a href="fileCloud.jsp" target="right">文件上传</a></li>
             <audio loop src="" autoplay="autoplay" preload="auto" ></audio>

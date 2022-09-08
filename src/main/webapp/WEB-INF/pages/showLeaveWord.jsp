@@ -7,15 +7,15 @@
 <body>
 <center>
     <div>
-        姓名:${name}
+        <h1> 姓名:${name}</h1>
         <c:if test="${empty  wordList}">
-            <p>此人没有被人留言<a href="${pageContext.request.contextPath}/leaveWord.jsp">去留言</a></p>
+            此人没有被人留言<a href="${pageContext.request.contextPath}/leaveWord.jsp">去留言</a>
         </c:if>
         <c:if test="${ not empty wordList}">
             <table  border="2" style="border: skyblue ">
                 <tr>
                         <%-- <td>姓名</td>--%>
-                    <td>内容</td>
+                    <td>留言内容</td>
                     <td>时间</td>
                     <td>留言者</td>
                 </tr>
@@ -31,6 +31,10 @@
                 </c:forEach>
             </table>
         </c:if>
+        <br>
+        <br>
+        <br>
+        <br>
     </div>
 
 </center>
