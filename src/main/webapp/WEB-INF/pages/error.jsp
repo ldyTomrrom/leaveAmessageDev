@@ -8,7 +8,7 @@
     <meta http-equiv="Cache-Control" content="no-transform"/>
     <link rel="icon" href="https://yoyling.com/favicon.ico">
 
-    <title>ERROR</title>
+    <title>shunxin.online</title>
     <style>
         body{
             margin:0;padding:0;

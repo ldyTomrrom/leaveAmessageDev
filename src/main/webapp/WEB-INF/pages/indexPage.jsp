@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>shunxin.online</title>
 </head>
 <script src="${pageContext.request.contextPath}/js/jquery-3.2.1.min.js"></script>
 <body>

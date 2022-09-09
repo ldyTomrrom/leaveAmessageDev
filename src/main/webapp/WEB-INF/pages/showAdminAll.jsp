@@ -2,7 +2,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>shunxin.online</title>
 </head>
 <script src="${pageContext.request.contextPath}/js/jquery-3.2.1.min.js"></script>
 <body>
@@ -39,12 +39,9 @@
 
             </tr>
             <c:forEach var="word" items="${wordList}" varStatus="w">
-
                 <tr>
                     <td>${word.owner}</td>
-                    <td>
-                        <textarea rows="10" cols="40" disabled="true">${word.context}</textarea>
-                    </td>
+                    <td>${word.context}</td>
                     <td>${word.messagetime}</td>
                     <td>${word.name}</td>
                 </tr>

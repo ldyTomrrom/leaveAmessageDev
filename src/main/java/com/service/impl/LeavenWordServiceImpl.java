@@ -7,6 +7,7 @@ import com.pojo.Owner;
 import com.service.LeavenWordService;
 import com.util.DateUtils;
 import com.util.UUIDUtils;
+import com.vo.LeavenWordCndVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -31,6 +32,7 @@ public class LeavenWordServiceImpl implements LeavenWordService {
     @Transactional(rollbackFor =Exception.class)
     @Override
     public int addLeavenWord(String context, String oname, String name) {
+
         //先查询出oname是否存在,存在则返回id并插入备注 不存在先新增oname后插入备注
         Owner o= ownerMapper.selectByNameIsExist(oname);
 
@@ -39,8 +41,13 @@ public class LeavenWordServiceImpl implements LeavenWordService {
            o=new Owner();
            o.setId(UUIDUtils.getUUID());
            o.setName(oname);
-           int ru= ownerMapper.insertAll(o);
+           ownerMapper.insertAll(o);
        }
+        //验证是否是无效留言,如果重复内容为3条以上则取消插入
+        int r=leaveWordMapper.selectLeaveWordIsFeasible(o.getId(),name,context);
+        if (r>3){
+            return 0;
+        }
        //存在此姓名, 新建备注
         LeaveWord lw=new LeaveWord();
        lw.setContext(context);
@@ -78,5 +85,12 @@ public class LeavenWordServiceImpl implements LeavenWordService {
     @Override
     public int deleteById(String id) {
         return leaveWordMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public List<LeaveWord> selectLeavenWordCnd(LeavenWordCndVO lwc) {
+        //多条件查询留言
+        List<LeaveWord> leaveWordList= leaveWordMapper.selectLeavenWordCnd(lwc);
+        return leaveWordList;
     }
 }

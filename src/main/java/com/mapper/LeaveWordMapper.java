@@ -1,6 +1,7 @@
 package com.mapper;
 
 import com.pojo.LeaveWord;
+import com.vo.LeavenWordCndVO;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -21,4 +22,8 @@ public interface LeaveWordMapper {
     List<LeaveWord> selectBySnameLike(@Param("name") String name);
 
     List<LeaveWord> selectByNameLikeAll(@Param("name") String name);
+
+    int selectLeaveWordIsFeasible(@Param("oid") String oId,@Param("name") String name, @Param("context") String context);
+
+    List<LeaveWord> selectLeavenWordCnd(LeavenWordCndVO lwc);
 }
