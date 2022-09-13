@@ -11,10 +11,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
 
 
-    @RequestMapping("/index/homepage")
-    public String   index(){
-
-        return "Homepage.jsp";
-    }
 
 }

@@ -17,4 +17,9 @@ public interface UserMapper {
     int updateByPrimaryKey(User record);
 
     User selectByAccountIsExist(@Param("name")String name,@Param("pwd")  String pwd);
+
+
+    int insertUser(@Param("name") String name, @Param("pwd") String pwd, @Param("phone") String phone);
+
+    User selectByAccount(@Param("name") String name);
 }

@@ -61,6 +61,9 @@
         </if>
     </trim>
   </insert>
+  <insert id="insertUser">
+    insert into tbl_user(account,password,phone) values (#{name},#{pwd},#{phone})
+  </insert>
   <update id="updateByPrimaryKeySelective" parameterType="com.pojo.User">
     update tbl_user
     <set>
@@ -92,7 +95,11 @@
     from tbl_user
     where account=#{name} and password=#{pwd}
   </select>
-
+  <select id="selectByAccount" resultType="com.pojo.User" parameterType="java.lang.String">
+    select <include refid="Base_Column_List"></include>
+    from  tbl_user
+    where account=#{name}
+  </select>
 
 
 </mapper>

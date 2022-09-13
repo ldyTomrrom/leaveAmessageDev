@@ -1,6 +1,7 @@
 package com.service.impl;
 
 
+import com.alibaba.druid.sql.dialect.phoenix.visitor.PhoenixASTVisitor;
 import com.mapper.UserMapper;
 import com.pojo.User;
 import com.service.UserService;
@@ -37,5 +38,15 @@ public class UserServiceImpl implements UserService {
               int result= userMapper.updateByPrimaryKeySelective(user);
             }
         return user;
+    }
+
+    @Override
+    public int insertUser(String name, String pwd, String phone) {
+       User user=userMapper.selectByAccount(name);
+       if (user!=null){
+           return 0;
+       }
+        int i = userMapper.insertUser(name,pwd,phone);
+        return i;
     }
 }

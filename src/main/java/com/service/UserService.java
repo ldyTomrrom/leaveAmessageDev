@@ -8,4 +8,6 @@ import com.pojo.User;
  */
 public interface UserService {
     User selectByAccountIsExist(String name, String pwd);
+
+    int insertUser(String name, String pwd, String phone);
 }

@@ -88,14 +88,14 @@
 <body>
     <div class="di">
         <div class="banxin">
-            <h1>管理登录</h1>
+            <h1>用户登录</h1>
             <form action="${pageContext.request.contextPath}/user/login" method="post" class="dl">
                 <input type="text" name="username" class="txt" placeholder="请输入账号">
                 <input type="password" name="password" placeholder="possword" class="txt">
                 <input type="submit" value="登录" class="denglu">
                 <div class="chongzhi">
                     <input type="reset">
-                    <a href="">注册</a>
+                    <a href="register.jsp">注册</a>
                 </div>
             </form>
 
