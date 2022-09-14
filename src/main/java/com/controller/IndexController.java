@@ -11,5 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
 
 
+    @RequestMapping("/index/login")
+    public String login(){
+
+        return "loginUser.jsp";
+    }
 
 }

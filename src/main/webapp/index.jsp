@@ -4,7 +4,7 @@
     <title>shunxin.online</title>
 </head>
 <script type="text/javascript">
-    window.location.href="loginUser.jsp";
+    window.location.href="${pageContext.request.contextPath}/index/login";
 </script>
 <body>
 </body>

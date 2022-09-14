@@ -25,7 +25,9 @@ public class UserController {
 
     @PostMapping("/user/login")
     public String  userLogin(HttpServletRequest request, @RequestParam("username")String name, @RequestParam("password")String pwd){
-       //登录用户
+
+
+        //登录用户
         if (StringUtils.isEmpty(name) || StringUtils.isEmpty(pwd)){
             return "error.jsp";
         }

@@ -97,7 +97,7 @@
                 <button id="register"  class="denglu">注册</button>
                 <div class="chongzhi">
                     <input  id="reset" type="reset">
-                    <a href="loginUser.jsp">登录</a>
+                    <a href="${pageContext.request.contextPath}/index/login">登录</a>
                 </div>
             </div>
 

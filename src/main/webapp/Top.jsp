@@ -13,7 +13,7 @@
 </style>
 <body style="background-color:seashell">
 <center>
-    <font class="style1"> 留言吧</font>
+    <font class="style1">🧐 </font>
 </center>
 
 </body>

@@ -95,7 +95,7 @@
                 <input type="submit" value="登录" class="denglu">
                 <div class="chongzhi">
                     <input type="reset">
-                    <a href="register.jsp">注册</a>
+                    <a href="${pageContext.request.contextPath}/register.jsp">注册</a>
                 </div>
             </form>
 

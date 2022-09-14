@@ -11,11 +11,11 @@
 <center>
 
 
-    好友名字:<input id="ownerName"><br/><br/>
+    他:<input id="ownerName"><br/><br/>
     <textarea id="lword" rows="10" cols="100"></textarea>
 
     <br/>
-     你的角色:<input type="text" id="name">
+     我:<input type="text" id="name">
     <button id="rest">清空留言</button>
     <button id="submit">提交留言</button>
     <br>

@@ -6,7 +6,7 @@
 <script src="js/jquery-3.2.1.min.js"></script>
 <body style="background-color: lemonchiffon">
 <center>
-    查询留言<input id="sname"  type="text">
+    输入名字查询留言<input id="sname"  type="text">
     <button id="select">查询</button>
 
 </center>
